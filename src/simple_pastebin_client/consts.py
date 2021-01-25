@@ -5,7 +5,7 @@ LOGGING_FORMAT = '[%(asctime)s - %(name)s] %(message)s'
 
 # urls
 URL = "https://pastebin.com"
-URL_USER = "https://pastebin.com/u/{user}/{page}/0/1/?o=a1"
+URL_USER = "https://pastebin.com/u/{user}/{page}"
 URL_RAW = "https://pastebin.com/raw/{raw}"
 URL_SEARCH = "https://pastebin.com/search?q={query}"
 API_POST = "https://pastebin.com/api/api_post.php"
