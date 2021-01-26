@@ -229,7 +229,7 @@ class PasteBinApiClient(object):
 
         while pos < pages:
             url = URL_USER.format(**{'user': username,
-                                  'page': page})
+                                  'page': pos})
             rsp = requests.get(url, headers=HEADERS)
             data = rsp.text
             results = results + extract_user_pastes_titles_date(data)
