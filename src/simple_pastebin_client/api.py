@@ -178,7 +178,7 @@ class PasteBinApiClient(object):
     @classmethod
     def paste_html(cls, paste_key):
         url = URL + "/" + paste_key
-        rsp = requests.post(url, headers=HEADERS)
+        rsp = requests.get(url, headers=HEADERS)
         return rsp.content
 
     @classmethod

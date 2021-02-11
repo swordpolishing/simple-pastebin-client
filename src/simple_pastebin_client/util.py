@@ -95,9 +95,10 @@ def extract_single_element(html_page, tag, attr, value_in):
 
 
 def extract_paste_box_line1(html_page):
-    tag, attr, value_in = [DIV, CLASS, PBOX_1]
-    v = extract_single_element(html_page, tag, attr, value_in)
-    title = '' if v is None else v['title']
+    tag = BeautifulSoup(html_page, 'html.parser',
+                         parse_only=SoupStrainer('h1')).get_text()
+
+    title = '' if tag is None else tag
     return {'title': title}
 
 
