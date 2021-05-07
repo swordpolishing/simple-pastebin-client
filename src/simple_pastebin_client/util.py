@@ -68,7 +68,9 @@ def extract_date_user_page(date_str):
     nd = date_str.replace(',', '').replace('st ', ' ')
     nd = nd.replace('th ', ' ').replace(' of ', ' ')
     nd = nd.replace('rd ', ' ').replace('nd ', ' ').replace('Augu', 'August')
-    dt = datetime.strptime(nd, "%b %d %y")
+    fixed_stirng = nd
+    fixed_stirng = fixed_stirng.strip()
+    dt = datetime.strptime(fixed_stirng, "%b %d %Y")
     dt_loc = timezone(tz).localize(dt)
     return dt_loc.astimezone(utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 

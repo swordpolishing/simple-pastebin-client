@@ -210,7 +210,7 @@ class PasteBinApiClient(object):
             # granularity is to the day before updating the info
             results.append(info)
 
-        results = [i for i in results if i['unix'] > after_ux_ts]
+        # results = [i for i in results if i['unix'] > after_ux_ts]
         return results
 
     @classmethod
